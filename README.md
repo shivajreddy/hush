@@ -28,36 +28,6 @@ sudo apt install ffmpeg
 winget install ffmpeg
 ```
 
-## Usage
-
-### Run from source
-
-```bash
-# English transcription (default: base model)
-python src/main.py
-
-# Specify model size
-python src/main.py small
-
-# Russian/English → English translation
-python src/main_russian.py
-python src/main_russian.py medium
-```
-
-### Run as binary
-
-```bash
-# Default (base model)
-./build/hush.exe
-
-# With model argument
-./build/hush.exe small
-```
-
-**Hotkeys:**
-- `Shift+F10` - Start/stop recording
-- After recording stops, text is copied to clipboard and pasted automatically
-
 ## Build
 
 ```bash
@@ -66,9 +36,38 @@ pyinstaller --onefile src/main.py --name hush --distpath build --workpath .pyins
 
 Output: `build/hush.exe`
 
-## Models
+## Usage
 
-Pass as argument: `hush.exe small` or `python src/main.py small` (default: `base`)
+```bash
+hush.exe [model]
+```
+
+| Command | Description |
+|---------|-------------|
+| `hush.exe` | Run with default model (base) |
+| `hush.exe tiny` | Fastest, lower accuracy |
+| `hush.exe base` | Default, balanced |
+| `hush.exe small` | Good accuracy, recommended for non-English |
+| `hush.exe medium` | Great accuracy, slower |
+| `hush.exe large` | Best accuracy, slowest |
+
+**Hotkeys:**
+- `Shift+F10` - Start/stop recording
+- After recording stops, text is copied to clipboard and pasted automatically
+
+### Run from source
+
+```bash
+# English transcription
+python src/main.py
+python src/main.py small
+
+# Russian/English → English translation
+python src/main_russian.py
+python src/main_russian.py medium
+```
+
+## Models
 
 | Model | Size | Speed | Accuracy |
 |-------|------|-------|----------|
