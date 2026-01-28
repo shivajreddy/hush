@@ -53,7 +53,10 @@ python src/main_russian.py
 ## Build
 
 ```bash
-pyinstaller --onefile src/main.py --name hush --distpath build --workpath .pyinstaller
+pyinstaller --onefile src/main.py --name hush \
+  --distpath build \
+  --workpath .pyinstaller \
+  --add-data "venv/Lib/site-packages/whisper/assets;whisper/assets"
 ```
 
 Output: `build/hush.exe`
