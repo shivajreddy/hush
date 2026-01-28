@@ -33,17 +33,25 @@ winget install ffmpeg
 ### Run from source
 
 ```bash
-# English transcription
+# English transcription (default: base model)
 python src/main.py
+
+# Specify model size
+python src/main.py small
 
 # Russian/English → English translation
 python src/main_russian.py
+python src/main_russian.py medium
 ```
 
 ### Run as binary
 
 ```bash
+# Default (base model)
 ./build/hush.exe
+
+# With model argument
+./build/hush.exe small
 ```
 
 **Hotkeys:**
@@ -60,7 +68,7 @@ Output: `build/hush.exe`
 
 ## Models
 
-Change `MODEL_NAME` in the script:
+Pass as argument: `hush.exe small` or `python src/main.py small` (default: `base`)
 
 | Model | Size | Speed | Accuracy |
 |-------|------|-------|----------|

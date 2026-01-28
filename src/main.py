@@ -2,6 +2,7 @@ import pyperclip
 from pynput import keyboard
 from pynput.keyboard import Key, Controller as KeyboardController
 from pynput.mouse import Button as MouseButton, Controller as MouseCountroller
+import sys
 import time
 import whisper
 import sounddevice as sd
@@ -12,12 +13,11 @@ from pathlib import Path
 SAMPLE_RATE = 16000  # Whisper expects 16kHz audio
 OUTPUT_DIR = Path(__file__).parent.parent / "recordings"
 OUTPUT_FILE = OUTPUT_DIR / "latest_record.wav"
-# Available options in order "tiny", "base", small", "medium", or "large" as needed
-MODEL_NAME = "small"
+VALID_MODELS = ["tiny", "base", "small", "medium", "large"]
 
 
 class SpeechToText:
-    def __init__(self):
+    def __init__(self, model_name="base"):
         self.recording = False
         self.start_time = None
         self.audio_data = []
@@ -30,8 +30,8 @@ class SpeechToText:
         OUTPUT_DIR.mkdir(exist_ok=True)
 
         # Load Whisper model once at startup
-        print(f"Loading Whisper '{MODEL_NAME}' model...")
-        self.model = whisper.load_model(MODEL_NAME)
+        print(f"Loading Whisper '{model_name}' model...")
+        self.model = whisper.load_model(model_name)
         print("Model loaded. Ready!")
 
     def audio_callback(self, indata, frames, time_info, status):
@@ -128,5 +128,12 @@ class SpeechToText:
 
 
 if __name__ == "__main__":
-    app = SpeechToText()
+    model_name = sys.argv[1] if len(sys.argv) > 1 else "base"
+
+    if model_name not in VALID_MODELS:
+        print(f"Invalid model: {model_name}")
+        print(f"Valid options: {', '.join(VALID_MODELS)}")
+        sys.exit(1)
+
+    app = SpeechToText(model_name)
     app.run()
