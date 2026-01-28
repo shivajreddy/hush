@@ -30,6 +30,8 @@ winget install ffmpeg
 
 ## Usage
 
+### Run from source
+
 ```bash
 # English transcription
 python src/main.py
@@ -38,9 +40,23 @@ python src/main.py
 python src/main_russian.py
 ```
 
+### Run as binary
+
+```bash
+./build/hush.exe
+```
+
 **Hotkeys:**
 - `Shift+F10` - Start/stop recording
 - After recording stops, text is copied to clipboard and pasted automatically
+
+## Build
+
+```bash
+pyinstaller --onefile src/main.py --name hush --distpath build --workpath .pyinstaller
+```
+
+Output: `build/hush.exe`
 
 ## Models
 

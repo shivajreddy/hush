@@ -20,5 +20,11 @@ recordings/*
 .DS_Store
 Thumbs.db
 
+# PyInstaller
+.pyinstaller/
+*.spec
+build/*
+!build/.gitkeep
+
 # Pipenv
 Pipfile.lock

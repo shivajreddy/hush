@@ -1,3 +1,4 @@
+altgraph==0.17.5
 certifi==2026.1.4
 cffi==2.0.0
 charset-normalizer==3.4.4
@@ -14,9 +15,14 @@ networkx==3.6.1
 numba==0.63.1
 numpy==2.3.5
 openai-whisper==20250625
+packaging==26.0
+pefile==2024.8.26
 pycparser==3.0
+pyinstaller==6.18.0
+pyinstaller-hooks-contrib==2026.0
 pynput==1.8.1
 pyperclip==1.11.0
+pywin32-ctypes==0.2.3
 regex==2026.1.15
 requests==2.32.5
 scipy==1.17.0
