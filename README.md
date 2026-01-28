@@ -16,7 +16,7 @@ git clone https://github.com/YOUR_USERNAME/hush.git
 cd hush
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install openai-whisper pynput sounddevice scipy numpy pyperclip
+pip install -r requirements.txt
 ```
 
 FFmpeg is required:
