@@ -8,8 +8,8 @@ venv/
 .venv/
 
 # Recordings
-files/*
-!files/.gitkeep
+recordings/*
+!recordings/.gitkeep
 
 # IDE
 .vscode/

@@ -10,7 +10,7 @@ from scipy.io.wavfile import write as write_wav
 from pathlib import Path
 
 SAMPLE_RATE = 16000  # Whisper expects 16kHz audio
-OUTPUT_DIR = Path("files")
+OUTPUT_DIR = Path(__file__).parent.parent / "recordings"
 OUTPUT_FILE = OUTPUT_DIR / "latest_record.wav"
 # Available options in order "tiny", "base", small", "medium", or "large" as needed
 MODEL_NAME = "small"

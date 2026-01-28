@@ -32,10 +32,10 @@ winget install ffmpeg
 
 ```bash
 # English transcription
-python main.py
+python src/main.py
 
 # Russian/English → English translation
-python main_russian.py
+python src/main_russian.py
 ```
 
 **Hotkeys:**
