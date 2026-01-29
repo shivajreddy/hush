@@ -25,7 +25,7 @@ FFmpeg is required:
 sudo apt install ffmpeg
 
 # Windows (winget)
-winget install ffmpeg
+winget install --id Gyan.FFmpeg.Essentials -e --source winget
 ```
 
 ## Build
