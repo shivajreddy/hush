@@ -52,8 +52,23 @@ hush.exe [model]
 | `hush.exe large` | Best accuracy, slowest |
 
 **Hotkeys:**
-- `Shift+F10` - Start/stop recording
+- `Shift+F10` - Start/stop recording (default)
 - After recording stops, text is copied to clipboard and pasted automatically
+
+**Custom Hotkey:**
+
+Create a `keymaps.txt` file next to the executable (or in the project root when running from source) with your preferred hotkey:
+
+```
+f7
+```
+
+Supported formats:
+- `f7` - Single key (F1-F12)
+- `shift+f10` - Shift + key
+- `ctrl+f5` - Ctrl + key
+- `alt+f1` - Alt + key
+- `ctrl+shift+f12` - Multiple modifiers
 
 ### Run from source
 

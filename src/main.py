@@ -11,9 +11,18 @@ from scipy.io.wavfile import write as write_wav
 from pathlib import Path
 
 SAMPLE_RATE = 16000  # Whisper expects 16kHz audio
-OUTPUT_DIR = Path(__file__).parent.parent / "recordings"
+
+# Determine base directory (next to executable if bundled, or project root if running from source)
+if getattr(sys, "frozen", False):
+    # Running as PyInstaller bundle - use directory containing the executable
+    BASE_DIR = Path(sys.executable).parent
+else:
+    # Running from source - use project root (parent of src/)
+    BASE_DIR = Path(__file__).parent.parent
+
+OUTPUT_DIR = BASE_DIR / "recordings"
 OUTPUT_FILE = OUTPUT_DIR / "latest_record.wav"
-KEYMAP_FILE = Path(__file__).parent.parent / "keymaps.txt"
+KEYMAP_FILE = BASE_DIR / "keymaps.txt"
 VALID_MODELS = ["tiny", "base", "small", "medium", "large"]
 
 # Mapping of string names to pynput Key objects
