@@ -12,7 +12,7 @@ Local speech-to-text with hotkey control. Speak, transcribe, paste.
 ## Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/hush.git
+git clone https://github.com/shivajreddy/hush.git
 cd hush
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
@@ -25,7 +25,7 @@ FFmpeg is required:
 sudo apt install ffmpeg
 
 # Windows (winget)
-winget install ffmpeg
+winget install --id Gyan.FFmpeg.Essentials -e --source winget
 ```
 
 ## Build
